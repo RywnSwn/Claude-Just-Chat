@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en" data-palette="aero-lagoon">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Personal desktop of rywnswn — student, builder, occasional menace to my own free time.">
+<meta name="theme-color" content="#2a9fd8">
+<title>rywnswn</title>
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="rywnswn">
+<meta property="og:description" content="Personal desktop of rywnswn — student, builder, occasional menace to my own free time.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="rywnswn">
+<meta name="twitter:description" content="Personal desktop of rywnswn — student, builder, occasional menace to my own free time.">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><defs><linearGradient id='g' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='%23bdf0ff'/><stop offset='.5' stop-color='%2338b6e6'/><stop offset='1' stop-color='%23127aad'/></linearGradient></defs><rect width='32' height='32' rx='9' fill='url(%23g)'/><ellipse cx='16' cy='9' rx='11' ry='6' fill='%23ffffff' opacity='.45'/><text x='16' y='23' font-family='Segoe UI,sans-serif' font-size='15' font-weight='700' fill='%23fff' text-anchor='middle'>r</text></svg>">
+
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/desktop.css">
+<link rel="stylesheet" href="css/panels.css">
+</head>
+<body>
+
+<canvas class="custom-cursor-canvas" data-custom-cursor aria-hidden="true"></canvas>
+
+<div class="page-shell">
+
+  <!-- ============ animated background ============ -->
+  <div class="aurora-field" aria-hidden="true">
+    <canvas id="aurora-canvas"></canvas>
+    <div class="aurora-field__veil"></div>
+    <div class="aurora-field__glare"></div>
+  </div>
+
+  <main class="desktop-wrap" data-desktop>
+
+    <div class="desktop-selection" data-desktop-selection hidden aria-hidden="true"></div>
+
+    <!-- ============ WINDOW 1 — home ============ -->
+    <section id="home-window" class="glass-window desktop-window home-window"
+             data-window="home"
+             data-resizable data-resize-min-width="420" data-resize-min-height="380"
+             aria-label="rywnswn personal homepage">
+      <div class="sheen" aria-hidden="true"></div>
+
+      <header class="window-bar" data-drag-handle>
+        <div class="wordmark">
+          <span class="app-icon" aria-hidden="true">r</span>
+          <span>rywnswn.home</span>
+        </div>
+        <div class="window-actions">
+          <button id="sound-toggle" type="button" class="sound-toggle"
+                  aria-pressed="false" aria-label="Enable interface sounds" title="Enable interface sounds">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                 stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="ico sound-on hidden">
+              <path d="M11 5 6 9H3v6h3l5 4z"></path><path d="M16 9a5 5 0 0 1 0 6"></path>
+              <path d="M19.4 5.6a9 9 0 0 1 0 12.8"></path>
+            </svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                 stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="ico sound-off">
+              <path d="M11 5 6 9H3v6h3l5 4z"></path><line x1="22" y1="9" x2="16" y2="15"></line>
+              <line x1="16" y1="9" x2="22" y2="15"></line>
+            </svg>
+            <span>SND:<span data-sound-label>off</span></span>
+          </button>
+          <div class="window-buttons">
+            <button type="button" class="window-control" data-window-action="minimize" data-sound="tap" aria-label="Minimize home window" title="Minimize">&minus;</button>
+            <button type="button" class="window-control" data-window-action="maximize" data-sound="tap" aria-label="Maximize home window" aria-pressed="false" title="Maximize">&#9633;</button>
+            <button type="button" class="window-control window-control-close" data-window-action="close" data-sound="tap" aria-label="Close home window" title="Close">&times;</button>
+          </div>
+        </div>
+      </header>
+
+      <div class="address-strip">
+        <span class="address-label">PAGE</span>
+        <div class="address-field"><span class="address-icon" aria-hidden="true"></span>PERSONAL NODE / RYWNSWN / HOME</div>
+        <span class="address-status"><i aria-hidden="true"></i> ONLINE</span>
+      </div>
+
+      <div class="ticker" aria-label="Welcome to my corner of the internet. Built by hand, hosted on a whim.">
+        <div class="ticker-track" aria-hidden="true">
+          <span>&#9679; WELCOME TO MY CORNER OF THE INTERNET &#9679; <span class="ticker-accent">BUILT BY HAND, HOSTED ON A WHIM</span> &#9679;&nbsp;</span>
+          <span>&#9679; WELCOME TO MY CORNER OF THE INTERNET &#9679; <span class="ticker-accent">BUILT BY HAND, HOSTED ON A WHIM</span> &#9679;&nbsp;</span>
+        </div>
+      </div>
+
+      <div class="window-body">
+        <div class="main-column">
+
+          <section class="panel about-panel intro-reveal">
+            <div class="panel-title"><span>ABOUT_ME.TXT</span><span>READ ONLY</span></div>
+            <div class="about-content">
+              <p class="eyebrow"><span aria-hidden="true"></span> personal page of</p>
+              <div class="name-row">
+                <h1 class="name-heading"><span>rywn</span><span class="name-accent">swn</span></h1>
+                <span class="aero-spark" aria-hidden="true"></span>
+              </div>
+              <p class="description">
+                Student, builder, and full-time collector of half-finished projects.
+                I like things that are made by hand and look like they were made by hand.
+              </p>
+              <div class="page-tags" aria-label="Page information">
+                <span>PERSONAL HOMEPAGE</span>
+                <span>WORK IN PROGRESS</span>
+                <span>NO TRACKERS</span>
+              </div>
+            </div>
+          </section>
+
+          <section class="panel links-panel intro-reveal">
+            <div class="panel-title"><span>BOOKMARKS</span><span data-bookmark-count>2 ITEMS</span></div>
+            <nav class="contact-grid" aria-label="Find me online">
+
+              <a class="contact-card tone-aqua" href="https://github.com/rywnswn" target="_blank" rel="noreferrer"
+                 data-sound="tap" data-contact-label="GitHub">
+                <span class="contact-icon" aria-hidden="true">GH</span>
+                <span class="contact-copy"><strong>GitHub</strong><small>Everything I break in public</small></span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+                     stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="ico contact-arrow">
+                  <path d="M7 7h10v10"></path><path d="M7 17 17 7"></path>
+                </svg>
+              </a>
+
+              <button type="button" class="contact-card tone-lime"
+                      aria-haspopup="dialog" aria-controls="email-dialog"
+                      data-dialog-open="email-dialog" data-sound="tap" data-contact-label="Email">
+                <span class="contact-icon" aria-hidden="true">@</span>
+                <span class="contact-copy"><strong>Email</strong><small>Copy address</small></span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+                     stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="ico contact-arrow">
+                  <path d="m6 9 6 6 6-6"></path>
+                </svg>
+              </button>
+
+              <!-- ===================================================================
+                   ADD A NEW LINK: copy the block below, uncomment it, and change
+                   the href, the two-letter icon, the title and the subtitle.
+                   Tone options: tone-aqua  tone-lime  tone-violet  tone-sun
+                   The "N ITEMS" counter in the panel title updates itself.
+              ====================================================================
+              <a class="contact-card tone-violet" href="https://example.com" target="_blank" rel="noreferrer"
+                 data-sound="tap" data-contact-label="Discord">
+                <span class="contact-icon" aria-hidden="true">DC</span>
+                <span class="contact-copy"><strong>Discord</strong><small>Come say hi</small></span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+                     stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="ico contact-arrow">
+                  <path d="M7 7h10v10"></path><path d="M7 17 17 7"></path>
+                </svg>
+              </a>
+              -->
+
+            </nav>
+          </section>
+        </div>
+
+        <aside class="panel-stack">
+          <section class="panel profile-panel portrait-reveal">
+            <div class="panel-title"><span>PROFILE.SVG</span><span>1 FRAME</span></div>
+            <div class="profile-content">
+              <div class="sprite-screen">
+                <svg viewBox="0 0 120 120" role="img" aria-label="Glossy orb avatar with the letter r">
+                  <defs>
+                    <linearGradient id="orb" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0" stop-color="#cdf3ff"/><stop offset="0.45" stop-color="#3fb9e8"/>
+                      <stop offset="1" stop-color="#0d6f9e"/>
+                    </linearGradient>
+                    <radialGradient id="gloss" cx="0.5" cy="0.18" r="0.55">
+                      <stop offset="0" stop-color="#ffffff" stop-opacity="0.95"/>
+                      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+                    </radialGradient>
+                    <radialGradient id="under" cx="0.5" cy="0.92" r="0.5">
+                      <stop offset="0" stop-color="#a8ff6b" stop-opacity="0.75"/>
+                      <stop offset="1" stop-color="#a8ff6b" stop-opacity="0"/>
+                    </radialGradient>
+                  </defs>
+                  <circle cx="60" cy="60" r="52" fill="url(#orb)"/>
+                  <circle cx="60" cy="60" r="52" fill="url(#under)"/>
+                  <ellipse cx="60" cy="36" rx="40" ry="26" fill="url(#gloss)"/>
+                  <text x="60" y="80" text-anchor="middle" font-family="Segoe UI, system-ui, sans-serif"
+                        font-size="54" font-weight="700" fill="#ffffff" opacity="0.92">r</text>
+                  <circle cx="60" cy="60" r="52" fill="none" stroke="#ffffff" stroke-opacity="0.55" stroke-width="2"/>
+                </svg>
+              </div>
+              <div class="profile-file-info">
+                <strong>rywnswn</strong>
+                <span>profile_orb.svg</span>
+              </div>
+              <div class="profile-status">
+                <span class="profile-status-label"><i aria-hidden="true"></i> STATUS</span>
+                <p data-profile-status-text>Explaining to my browser why 47 tabs is a reasonable number.</p>
+              </div>
+              <!-- Rotating status lines. Add or edit freely — first one renders without JS. -->
+              <div class="profile-status-options" hidden aria-hidden="true">
+                <span data-profile-status-option>Explaining to my browser why 47 tabs is a reasonable number.</span>
+                <span data-profile-status-option>Reading the documentation. (Lying.)</span>
+                <span data-profile-status-option>Refactoring something that already worked.</span>
+                <span data-profile-status-option>Three commits deep into a bug I introduced two commits ago.</span>
+                <span data-profile-status-option>Choosing a font. This has taken four hours.</span>
+                <span data-profile-status-option>Awake. Allegedly.</span>
+              </div>
+            </div>
+          </section>
+
+          <div class="panel sysinfo-panel">
+            <div class="panel-title"><span>SYS_INFO</span><span>LIVE</span></div>
+            <dl class="sysinfo-list">
+              <div><dt>BUILD</dt><dd>1.0 &middot; handmade</dd></div>
+              <div><dt>UPTIME</dt><dd><span data-uptime>00:00</span></dd></div>
+              <div><dt>REGION</dt><dd>somewhere warm</dd></div>
+              <div><dt>MOOD</dt><dd>cautiously optimistic</dd></div>
+            </dl>
+          </div>
+        </aside>
+      </div>
+
+      <footer class="status-bar">
+        <span><i aria-hidden="true"></i> PAGE ONLINE</span>
+        <span>RYWNSWN PERSONAL NODE</span>
+        <span>READY</span>
+      </footer>
+
+      <div class="window-resize-handle resize-n" data-resize-handle="n" aria-hidden="true"></div>
+      <div class="window-resize-handle resize-e" data-resize-handle="e" aria-hidden="true"></div>
+      <div class="window-resize-handle resize-s" data-resize-handle="s" aria-hidden="true"></div>
+      <div class="window-resize-handle resize-w" data-resize-handle="w" aria-hidden="true"></div>
+      <div class="window-resize-handle resize-ne" data-resize-handle="ne" aria-hidden="true"></div>
+      <div class="window-resize-handle resize-se" data-resize-handle="se" aria-hidden="true"></div>
+      <div class="window-resize-handle resize-sw" data-resize-handle="sw" aria-hidden="true"></div>
+      <div class="window-resize-handle resize-nw" data-resize-handle="nw" aria-hidden="true"></div>
+    </section>
+
+    <!-- ============ WINDOW 2 — projects ============ -->
+    <section id="projects-window" class="glass-window desktop-window projects-window"
+             data-window="projects"
+             data-resizable data-resize-min-width="400" data-resize-min-height="300"
+             aria-label="Projects file browser">
+      <div class="sheen" aria-hidden="true"></div>
+
+      <header class="window-bar" data-drag-handle>
+        <div class="wordmark">
+          <span class="app-icon projects-app-icon" aria-hidden="true">&#9635;</span>
+          <span>projects.exe</span>
+        </div>
+        <div class="window-actions">
+          <span class="window-state-label" data-projects-count>4 FILES</span>
+          <div class="window-buttons">
+            <button type="button" class="window-control" data-window-action="minimize" data-sound="tap" aria-label="Minimize projects window" title="Minimize">&minus;</button>
+            <button type="button" class="window-control" data-window-action="maximize" data-sound="tap" aria-label="Maximize projects window" aria-pressed="false" title="Maximize">&#9633;</button>
+            <button type="button" class="window-control window-control-close" data-window-action="close" data-sound="tap" aria-label="Close projects window" title="Close">&times;</button>
+          </div>
+        </div>
+      </header>
+
+      <div class="address-strip">
+        <span class="address-label">PATH</span>
+        <div class="address-field"><span class="address-icon" aria-hidden="true"></span>DRIVE C: / RYWNSWN / PROJECTS</div>
+        <span class="address-status"><i aria-hidden="true"></i> LOCAL</span>
+      </div>
+
+      <div class="projects-shell">
+        <div class="file-list-header" aria-hidden="true">
+          <span>NAME</span><span>KIND</span><span>UPDATED</span>
+        </div>
+
+        <ul class="file-list" aria-label="Project files">
+          <!-- ===== EDIT ME: one <li> per project. Duplicate a block to add one. ===== -->
+
+          <li class="file-row">
+            <a class="file-link" href="https://github.com/rywnswn" target="_blank" rel="noreferrer" data-sound="tap">
+              <span class="file-icon icon-folder" aria-hidden="true"></span>
+              <span class="file-name">
+                <strong>this-website</strong>
+                <small>A fake operating system pretending to be a portfolio.</small>
+              </span>
+              <span class="file-kind">HTML / CSS / JS</span>
+              <span class="file-date">just now</span>
+            </a>
+          </li>
+
+          <li class="file-row">
+            <a class="file-link" href="https://github.com/rywnswn" target="_blank" rel="noreferrer" data-sound="tap">
+              <span class="file-icon icon-code" aria-hidden="true"></span>
+              <span class="file-name">
+                <strong>project-two</strong>
+                <small>Replace this with something real. I believe in you.</small>
+              </span>
+              <span class="file-kind">UNKNOWN</span>
+              <span class="file-date">someday</span>
+            </a>
+          </li>
+
+          <li class="file-row">
+            <a class="file-link" href="https://github.com/rywnswn" target="_blank" rel="noreferrer" data-sound="tap">
+              <span class="file-icon icon-code" aria-hidden="true"></span>
+              <span class="file-name">
+                <strong>project-three</strong>
+                <small>Started strong. Then school happened.</small>
+              </span>
+              <span class="file-kind">UNKNOWN</span>
+              <span class="file-date">on hold</span>
+            </a>
+          </li>
+
+          <li class="file-row is-locked">
+            <div class="file-link" role="note">
+              <span class="file-icon icon-lock" aria-hidden="true"></span>
+              <span class="file-name">
+                <strong>secret_plans.zip</strong>
+                <small>Password protected. I have not written the password down anywhere.</small>
+              </span>
+              <span class="file-kind">ARCHIVE</span>
+              <span class="file-date">&mdash;</span>
+            </div>
+          </li>
+
+        </ul>
+      </div>
+
+      <footer class="status-bar">
+        <span><i aria-hidden="true"></i> <span data-projects-selected>NOTHING SELECTED</span></span>
+        <span>SORTED BY VIBES</span>
+        <span>READY</span>
+      </footer>
+
+      <div class="window-resize-handle resize-n" data-resize-handle="n" aria-hidden="true"></div>
+      <div class="window-resize-handle resize-e" data-resize-handle="e" aria-hidden="true"></div>
+      <div class="window-resize-handle resize-s" data-resize-handle="s" aria-hidden="true"></div>
+      <div class="window-resize-handle resize-w" data-resize-handle="w" aria-hidden="true"></div>
+      <div class="window-resize-handle resize-ne" data-resize-handle="ne" aria-hidden="true"></div>
+      <div class="window-resize-handle resize-se" data-resize-handle="se" aria-hidden="true"></div>
+      <div class="window-resize-handle resize-sw" data-resize-handle="sw" aria-hidden="true"></div>
+      <div class="window-resize-handle resize-nw" data-resize-handle="nw" aria-hidden="true"></div>
+    </section>
+
+    <!-- ============ WINDOW 3 — guestbook + now playing ============ -->
+    <section id="guestbook-window" class="glass-window desktop-window guestbook-window"
+             data-window="guestbook"
+             data-resizable data-resize-min-width="380" data-resize-min-height="360"
+             aria-label="Guestbook and now playing">
+      <div class="sheen" aria-hidden="true"></div>
+
+      <header class="window-bar" data-drag-handle>
+        <div class="wordmark">
+          <span class="app-icon guestbook-app-icon" aria-hidden="true">&#9993;</span>
+          <span>guestbook.sys</span>
+        </div>
+        <div class="window-actions">
+          <span class="window-state-label" data-guestbook-state>READY</span>
+          <div class="window-buttons">
+            <button type="button" class="window-control" data-window-action="minimize" data-sound="tap" aria-label="Minimize guestbook window" title="Minimize">&minus;</button>
+            <button type="button" class="window-control" data-window-action="maximize" data-sound="tap" aria-label="Maximize guestbook window" aria-pressed="false" title="Maximize">&#9633;</button>
+            <button type="button" class="window-control window-control-close" data-window-action="close" data-sound="tap" aria-label="Close guestbook window" title="Close">&times;</button>
+          </div>
+        </div>
+      </header>
+
+      <div class="address-strip">
+        <span class="address-label">FILE</span>
+        <div class="address-field"><span class="address-icon" aria-hidden="true"></span>SYSTEM / GUESTBOOK.SYS</div>
+        <span class="address-status"><i aria-hidden="true"></i> <span data-guestbook-connection>LOCAL</span></span>
+      </div>
+
+      <div class="guestbook-shell">
+
+        <section class="panel now-panel" aria-labelledby="now-title">
+          <div class="panel-title"><span id="now-title">NOW.PANEL</span><span>LIVE</span></div>
+          <!-- EDIT ME: change these three lines whenever you feel like it. -->
+          <dl class="now-list">
+            <div class="now-row">
+              <dt><span class="now-dot dot-lime" aria-hidden="true"></span>LISTENING</dt>
+              <dd>Whatever autoplay decided for me</dd>
+            </div>
+            <div class="now-row">
+              <dt><span class="now-dot dot-aqua" aria-hidden="true"></span>READING</dt>
+              <dd>Four books, one chapter each</dd>
+            </div>
+            <div class="now-row">
+              <dt><span class="now-dot dot-violet" aria-hidden="true"></span>BUILDING</dt>
+              <dd>This, apparently</dd>
+            </div>
+          </dl>
+        </section>
+
+        <section class="panel guestbook-panel" aria-labelledby="guestbook-title">
+          <div class="panel-title">
+            <span id="guestbook-title">SIGN_HERE.DAT</span>
+            <span data-guestbook-count>0 ENTRIES</span>
+          </div>
+
+          <form class="guestbook-form" data-guestbook-form novalidate>
+            <div class="guestbook-fields">
+              <label class="field">
+                <span class="field-label">NAME</span>
+                <input type="text" name="name" maxlength="24" required autocomplete="nickname"
+                       spellcheck="false" placeholder="your name" data-guestbook-name>
+              </label>
+              <label class="field field-grow">
+                <span class="field-label">MESSAGE</span>
+                <input type="text" name="message" maxlength="140" required
+                       placeholder="say something nice" data-guestbook-message>
+              </label>
+              <button type="submit" class="gloss-button" data-sound="tap">SIGN</button>
+            </div>
+            <p class="guestbook-status" data-guestbook-status aria-live="polite">
+              Saved in your browser only &middot; cloud hook ready
+            </p>
+          </form>
+
+          <ol class="guestbook-list" data-guestbook-list aria-live="polite">
+            <li class="guestbook-empty">READING MEMORY&hellip;</li>
+          </ol>
+        </section>
+      </div>
+
+      <footer class="status-bar">
+        <span><i aria-hidden="true"></i> <b data-guestbook-state>READY</b></span>
+        <span data-guestbook-storage>LOCAL ENTRY MEMORY</span>
+        <span>MAX 140 CHARS</span>
+      </footer>
+
+      <div class="window-resize-handle resize-n" data-resize-handle="n" aria-hidden="true"></div>
+      <div class="window-resize-handle resize-e" data-resize-handle="e" aria-hidden="true"></div>
+      <div class="window-resize-handle resize-s" data-resize-handle="s" aria-hidden="true"></div>
+      <div class="window-resize-handle resize-w" data-resize-handle="w" aria-hidden="true"></div>
+      <div class="window-resize-handle resize-ne" data-resize-handle="ne" aria-hidden="true"></div>
+      <div class="window-resize-handle resize-se" data-resize-handle="se" aria-hidden="true"></div>
+      <div class="window-resize-handle resize-sw" data-resize-handle="sw" aria-hidden="true"></div>
+      <div class="window-resize-handle resize-nw" data-resize-handle="nw" aria-hidden="true"></div>
+    </section>
+
+    <!-- ============ email dialog ============ -->
+    <dialog id="email-dialog" class="aero-dialog" aria-labelledby="email-dialog-title">
+      <div class="glass-window dialog-window">
+        <div class="sheen" aria-hidden="true"></div>
+        <header class="window-bar dialog-window-bar">
+          <div class="wordmark">
+            <span class="app-icon" aria-hidden="true">@</span>
+            <span id="email-dialog-title">email.txt</span>
+          </div>
+          <button type="button" class="window-control window-control-close" data-dialog-close data-sound="tap" aria-label="Close email dialog">&times;</button>
+        </header>
+
+        <div class="address-strip">
+          <span class="address-label">COPY</span>
+          <div class="address-field"><span class="address-icon" aria-hidden="true"></span>CONTACT / EMAIL ADDRESS</div>
+          <span class="address-status"><i aria-hidden="true"></i> LOCAL</span>
+        </div>
+
+        <div class="dialog-body">
+          <p class="dialog-intro">Copy the address below and paste it into whichever mail app you use.</p>
+          <label class="field-label" for="email-address">EMAIL ADDRESS</label>
+          <div class="email-copy-row">
+            <input id="email-address" class="email-address-field" type="text"
+                   value="rywnswn321421@gmail.com" readonly>
+            <button type="button" class="gloss-button" data-copy-email="rywnswn321421@gmail.com" data-sound="tap">
+              <span data-copy-label>COPY</span>
+            </button>
+          </div>
+          <div class="dialog-actions">
+            <p class="dialog-feedback" data-copy-status aria-live="polite">READY TO COPY</p>
+            <a class="dialog-mailto" href="mailto:rywnswn321421@gmail.com" data-sound="tap">
+              OPEN MAIL APP
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+                   stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="ico">
+                <path d="M7 7h10v10"></path><path d="M7 17 17 7"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <footer class="status-bar">
+          <span><i aria-hidden="true"></i> COPY MODE</span>
+          <span>PLAIN TEXT</span>
+          <span>READY</span>
+        </footer>
+      </div>
+    </dialog>
+
+    <!-- ============ taskbar ============ -->
+    <nav class="desktop-taskbar" aria-label="Open windows">
+      <span class="taskbar-start" aria-hidden="true">r</span>
+      <button type="button" class="taskbar-window-button is-active" data-window-launch="home"
+              data-sound="tap" aria-controls="home-window" aria-pressed="true">
+        <span class="taskbar-dot dot-home" aria-hidden="true"></span>rywnswn.home
+      </button>
+      <button type="button" class="taskbar-window-button is-active" data-window-launch="projects"
+              data-sound="tap" aria-controls="projects-window" aria-pressed="true">
+        <span class="taskbar-dot dot-projects" aria-hidden="true"></span>PROJECTS.EXE
+      </button>
+      <button type="button" class="taskbar-window-button is-active" data-window-launch="guestbook"
+              data-sound="tap" aria-controls="guestbook-window" aria-pressed="true">
+        <span class="taskbar-dot dot-guestbook" aria-hidden="true"></span>GUESTBOOK.SYS
+      </button>
+      <span class="taskbar-hint">DRAG WINDOWS BY THE TITLE BAR</span>
+      <span class="taskbar-clock" data-clock aria-live="off">--:--</span>
+    </nav>
+
+  </main>
+</div>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>

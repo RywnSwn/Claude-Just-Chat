@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" data-palette="aero-lagoon">
+<html lang="en" data-palette="retro">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Personal desktop of rywnswn — student, builder, occasional menace to my own free time.">
-<meta name="theme-color" content="#2a9fd8">
+<meta name="theme-color" content="#8c2f42">
 <title>rywnswn</title>
 
 <meta property="og:type" content="website">
@@ -14,7 +14,7 @@
 <meta name="twitter:title" content="rywnswn">
 <meta name="twitter:description" content="Personal desktop of rywnswn — student, builder, occasional menace to my own free time.">
 
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><defs><linearGradient id='g' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='%23bdf0ff'/><stop offset='.5' stop-color='%2338b6e6'/><stop offset='1' stop-color='%23127aad'/></linearGradient></defs><rect width='32' height='32' rx='9' fill='url(%23g)'/><ellipse cx='16' cy='9' rx='11' ry='6' fill='%23ffffff' opacity='.45'/><text x='16' y='23' font-family='Segoe UI,sans-serif' font-size='15' font-weight='700' fill='%23fff' text-anchor='middle'>r</text></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><rect width='16' height='16' fill='%23cfc7ba'/><rect width='16' height='1' fill='%23fdfaf3'/><rect width='1' height='16' fill='%23fdfaf3'/><rect y='15' width='16' height='1' fill='%234d463c'/><rect x='15' width='1' height='16' fill='%234d463c'/><rect x='4' y='4' width='2' height='8' fill='%238c2f42'/><rect x='6' y='4' width='4' height='2' fill='%238c2f42'/><rect x='10' y='6' width='2' height='2' fill='%238c2f42'/></svg>">
 
 <link rel="stylesheet" href="css/tokens.css">
 <link rel="stylesheet" href="css/desktop.css">
@@ -50,7 +50,12 @@
           <span>rywnswn.home</span>
         </div>
         <div class="window-actions">
-          <button id="sound-toggle" type="button" class="sound-toggle"
+          <button id="palette-toggle" type="button" class="bar-toggle"
+                  aria-label="Switch to the aero skin" title="Switch skin">
+            <span class="palette-swatch" aria-hidden="true"></span>
+            <span data-palette-label>RETRO</span>
+          </button>
+          <button id="sound-toggle" type="button" class="bar-toggle"
                   aria-pressed="false" aria-label="Enable interface sounds" title="Enable interface sounds">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
                  stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="ico sound-on hidden">
@@ -159,7 +164,7 @@
             <div class="panel-title"><span>PROFILE.SVG</span><span>1 FRAME</span></div>
             <div class="profile-content">
               <div class="sprite-screen">
-                <svg viewBox="0 0 120 120" role="img" aria-label="Glossy orb avatar with the letter r">
+                <svg class="avatar-aero" viewBox="0 0 120 120" role="img" aria-label="Glossy orb avatar with the letter r">
                   <defs>
                     <linearGradient id="orb" x1="0" y1="0" x2="0" y2="1">
                       <stop offset="0" stop-color="#cdf3ff"/><stop offset="0.45" stop-color="#3fb9e8"/>
@@ -181,10 +186,33 @@
                         font-size="54" font-weight="700" fill="#ffffff" opacity="0.92">r</text>
                   <circle cx="60" cy="60" r="52" fill="none" stroke="#ffffff" stroke-opacity="0.55" stroke-width="2"/>
                 </svg>
+
+<!-- Retro skin: a pixel CRT on a 16x16 grid. Hex fallbacks because
+                     this avatar is display:none under the aero palette, where the
+                     putty variables it references don't exist. -->
+                <svg class="avatar-retro" viewBox="0 0 16 16" shape-rendering="crispEdges"
+                     role="img" aria-label="Pixel-art CRT monitor with a smiling face">
+                  <!-- case -->
+                  <rect x="2"  y="1"  width="12" height="11" fill="var(--orb-3, #641f2f)"/>
+                  <rect x="2"  y="1"  width="12" height="1"  fill="var(--orb-2, #a8465c)"/>
+                  <rect x="7"  y="12" width="2"  height="2"  fill="var(--orb-3, #641f2f)"/>
+                  <rect x="4"  y="14" width="8"  height="2"  fill="var(--orb-3, #641f2f)"/>
+                  <rect x="4"  y="14" width="8"  height="1"  fill="var(--orb-2, #a8465c)"/>
+                  <!-- screen -->
+                  <rect x="3"  y="2"  width="10" height="9"  fill="var(--teal-900, #16403d)"/>
+                  <!-- face -->
+                  <rect x="5"  y="4"  width="1"  height="2"  fill="var(--led, #56c26a)"/>
+                  <rect x="10" y="4"  width="1"  height="2"  fill="var(--led, #56c26a)"/>
+                  <rect x="5"  y="7"  width="1"  height="1"  fill="var(--led, #56c26a)"/>
+                  <rect x="6"  y="8"  width="4"  height="1"  fill="var(--led, #56c26a)"/>
+                  <rect x="10" y="7"  width="1"  height="1"  fill="var(--led, #56c26a)"/>
+                  <!-- glare -->
+                  <rect x="4"  y="3"  width="2"  height="1"  fill="#ffffff" opacity="0.16"/>
+                </svg>
               </div>
               <div class="profile-file-info">
                 <strong>rywnswn</strong>
-                <span>profile_orb.svg</span>
+                <span>avatar.svg</span>
               </div>
               <div class="profile-status">
                 <span class="profile-status-label"><i aria-hidden="true"></i> STATUS</span>
@@ -480,6 +508,7 @@
     <!-- ============ taskbar ============ -->
     <nav class="desktop-taskbar" aria-label="Open windows">
       <span class="taskbar-start" aria-hidden="true">r</span>
+      <span class="taskbar-divider" aria-hidden="true"></span>
       <button type="button" class="taskbar-window-button is-active" data-window-launch="home"
               data-sound="tap" aria-controls="home-window" aria-pressed="true">
         <span class="taskbar-dot dot-home" aria-hidden="true"></span>rywnswn.home

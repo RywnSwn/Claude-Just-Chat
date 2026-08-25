@@ -4,6 +4,7 @@
  * come up and the page stays usable. That's the point of the split.
  */
 
+import { initTheme } from "./theme.js";
 import { initSound } from "./sound.js";
 import { initCursor } from "./cursor.js";
 import { initAurora } from "./aurora.js";
@@ -13,6 +14,7 @@ import { initStatus } from "./status.js";
 import { initGuestbook } from "./guestbook.js";
 
 const MODULES = [
+  ["theme", initTheme],
   ["sound", initSound],
   ["cursor", initCursor],
   ["aurora", initAurora],
